@@ -32,11 +32,9 @@ So, the plain text "Vishal" is represented as:
 
 ### 2. Key Setup
 
-- Select two prime numbers:
-  - \( p = 17 \)
-  - \( q = 19 \)
-- Compute \( N = p \times q = 17 \times 19 = 323 \)
-- Choose an encryption key \( K = 5 \), which is coprime with \( (p-1) \times (q-1) = 16 \times 18 = 288 \)
+- Let’s take two small prime numbers  p = 17  and  q = 19 .
+- Compute  N = p * q = 17 * 19 = 323 .
+- Let’s choose an encryption key  K = 5 , which is coprime with  (p-1) * (q-1) = 16 * 18 = 288 .
 
 ---
 
@@ -45,13 +43,13 @@ So, the plain text "Vishal" is represented as:
 Each ASCII value \( P \) is encrypted using the formula:
 
 \[
-C = (P \times K) \mod N
+C = (P * K) mod N
 \]
 
 Where:
-- \( P \) is the ASCII value of the character
-- \( K = 5 \) is the encryption key
-- \( N = 323 \)
+-  P  is the ASCII value of the character.
+-  K = 5  is the encryption key.
+-  N = 323 .
 
 #### Encrypted Values:
 
@@ -89,15 +87,22 @@ K^{-1} = 173
 Each ciphertext value \( C \) is decrypted using the formula:
 
 \[
-P = (C \times K^{-1}) \mod N
+P = (C * K-1) mod N
 \]
 
 Where:
-- \( C \) is the ciphertext
-- \( K^{-1} = 173 \) is the decryption key
-- \( N = 323 \)
+-  C  is the ciphertext.
+-  K-1 = 173  is the decryption key.
+-  N = 323 .
 
 #### Decrypted Values:
+
+- 107 →  P = (107 * 173) mod 323 = 18511 mod 323 = 86  → V
+- 202 →  P = (202 * 173) mod 323 = 34946 mod 323 = 105  → i
+- 252 →  P = (252 * 173) mod 323 = 43644 mod 323 = 115  → s
+- 197 →  P = (197 * 173) mod 323 = 34081 mod 323 = 104  → h
+- 162 →  P = (162 * 173) mod 323 = 28026 mod 323 = 97  → a
+- 217 →  P = (217 * 173) mod 323 = 37541 mod 323 = 108  → l
 
 | Encrypted Value (\( C \)) | Decrypted ASCII Value (\( P \)) | Character |
 |---------------------------|---------------------------------|-----------|
